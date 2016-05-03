@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="a5106059_abcdappModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ditcltest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PayPageObjectRole">
+    <Key>
+      <PropertyRef Name="PageObjAccId" />
+    </Key>
+    <Property Name="PageObjAccId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="PageObjectId" Type="Int32" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PayPageObject">
+    <Key>
+      <PropertyRef Name="PageObjectId" />
+    </Key>
+    <Property Name="PageObjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PageName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PagePath" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+    <Property Name="PageMethodeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PayRole">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AppUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="UpdateCardBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateCardDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="booking_driver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_driver_id" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="total" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="pickup_name" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="pickup_lat" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="pickup_lng" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="drop_off_name" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="drop_off_lat" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="drop_off_lng" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="distance" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="estimated_fare" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="driver_estm_fare_charge" Type="Decimal" Precision="18" Scale="8" />
+  </EntityType>
+  <EntityType Name="driver_rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="driver_id" Type="Int32" />
+    <Property Name="passenger_id" Type="Int32" />
+    <Property Name="rating" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FairChart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceType" Type="Int32" />
+    <Property Name="TimeSlot" Type="Int32" />
+    <Property Name="PickUp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PerKiloCost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FAQ">
+    <Key>
+      <PropertyRef Name="FAQId" />
+    </Key>
+    <Property Name="FAQId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flag" Type="Int32" />
+    <Property Name="FAQQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FAQAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="gcm_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gcm_regid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_driver_id" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="pickup_name" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="pickup_lat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="pickup_lng" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="drop_off_name" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="drop_off_lat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="drop_off_lng" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="distance" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estimated_fare" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HomePage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HomeText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HomeBanner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="HowItWork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Step" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Createdate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ServiceTimeSlot">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeSlot" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceType1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="createBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="createdate" Type="DateTime" Precision="3" />
+    <Property Name="updateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="updateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblInstruction">
+    <Key>
+      <PropertyRef Name="InsID" />
+    </Key>
+    <Property Name="InsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InstrucionD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="picture" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="zipcode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dog_id" Type="Int32" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="token_expiry" Type="Int32" />
+    <Property Name="device_token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="device_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="login_by" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="social_unique_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="latitude" Type="Decimal" Precision="15" Scale="8" />
+    <Property Name="longitude" Type="Decimal" Precision="15" Scale="8" />
+    <Property Name="referred_by" Type="Int32" />
+    <Property Name="debt" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="timezone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="deleted_at" Type="DateTime" Precision="3" />
+    <Property Name="rate" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="rate_count" Type="Int64" />
+    <Property Name="promo_count" Type="Int64" />
+    <Property Name="is_referee" Type="Int32" />
+    <Property Name="user_type" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="gcm_reg_id" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="user_driver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="picture" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="zipcode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dog_id" Type="Int32" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="token_expiry" Type="Int32" />
+    <Property Name="device_token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="device_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="login_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="social_unique_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="latitude" Type="Decimal" Precision="15" Scale="8" />
+    <Property Name="longitude" Type="Decimal" Precision="15" Scale="8" />
+    <Property Name="debt" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="deleted_at" Type="DateTime" Precision="3" />
+    <Property Name="rate" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="rate_count" Type="Int64" />
+    <Property Name="promo_count" Type="Int64" />
+    <Property Name="is_referee" Type="Int32" />
+    <Property Name="user_type" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="gcm_reg_id" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="current_location_road" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="car_no" Type="String" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="car_model_no" Type="String" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="manufacture_year" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="car_type" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="present_address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="license_image" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="nid_image" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="brtc_image" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="insurance_image" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="deshConnection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ditcltests" EntityType="Self.ditcltest" />
+    <EntitySet Name="PayPageObjectRoles" EntityType="Self.PayPageObjectRole" />
+    <EntitySet Name="PayPageObjects" EntityType="Self.PayPageObject" />
+    <EntitySet Name="PayRoles" EntityType="Self.PayRole" />
+    <EntitySet Name="AppUsers" EntityType="Self.AppUser" />
+    <EntitySet Name="booking_driver" EntityType="Self.booking_driver" />
+    <EntitySet Name="driver_rating" EntityType="Self.driver_rating" />
+    <EntitySet Name="FairCharts" EntityType="Self.FairChart" />
+    <EntitySet Name="FAQs" EntityType="Self.FAQ" />
+    <EntitySet Name="gcm_users" EntityType="Self.gcm_users" />
+    <EntitySet Name="histories" EntityType="Self.history" />
+    <EntitySet Name="HomePages" EntityType="Self.HomePage" />
+    <EntitySet Name="HowItWorks" EntityType="Self.HowItWork" />
+    <EntitySet Name="ServiceTimeSlots" EntityType="Self.ServiceTimeSlot" />
+    <EntitySet Name="ServiceTypes" EntityType="Self.ServiceType" />
+    <EntitySet Name="tblInstructions" EntityType="Self.tblInstruction" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="user_driver" EntityType="Self.user_driver" />
+  </EntityContainer>
+</Schema>

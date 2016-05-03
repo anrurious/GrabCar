@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -159,13 +161,83 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DitclTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AppUser.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\booking_driver.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeshEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeshEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeshEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeshEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeshEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ditcltest.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\driver_rating.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FairChart.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FAQ.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gcm_users.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\history.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HomePage.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HowItWork.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PayPageObject.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayPageObjectRole.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayRole.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceTimeSlot.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceType.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblInstruction.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user_driver.cs">
+      <DependentUpon>DeshEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -206,6 +278,23 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Models\DeshEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DeshEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DeshEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DeshEntity.edmx</DependentUpon>
+      <LastGenOutput>DeshEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DeshEntity.edmx.diagram">
+      <DependentUpon>DeshEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DeshEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DeshEntity.edmx</DependentUpon>
+      <LastGenOutput>DeshEntity.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\hammer.min.js" />
     <Content Include="Scripts\imagesloaded.pkgd.min.js" />
@@ -255,6 +344,11 @@
     <Content Include="Views\SignUp\Final.cshtml" />
     <Content Include="Views\SignUp\FAQ.cshtml" />
     <Content Include="Views\SignUp\PassengerRegistration.cshtml" />
+    <Content Include="Views\DitclTest\Create.cshtml" />
+    <Content Include="Views\DitclTest\Delete.cshtml" />
+    <Content Include="Views\DitclTest\Details.cshtml" />
+    <Content Include="Views\DitclTest\Edit.cshtml" />
+    <Content Include="Views\DitclTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,6 +359,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
